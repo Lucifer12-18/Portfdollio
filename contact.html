@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Vishal Deshmukh</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+</head>
+<body>
+  <header class="hero hero-secondary">
+    <div class="hero-content">
+      <h1><i class="fa-solid fa-envelope"></i> Contact Vishal</h1>
+      <div class="contact-header-nav">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="projects.html"><i class="fa-solid fa-diagram-project"></i> Projects</a>
+      </div>
+    </div>
+    <div class="wave-divider">
+      <svg viewBox="0 0 1440 320"><path fill="#f6f7fb" fill-opacity="1" d="M0,224L48,197.3C96,171,192,117,288,117.3C384,117,480,171,576,197.3C672,224,768,224,864,197.3C960,171,1056,117,1152,122.7C1248,128,1344,192,1392,224L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+    </div>
+  </header>
+
+  <form action="https://formspree.io/f/yourid" method="POST" class="animate-fadein">
+    <div class="form-group">
+      <input type="text" name="name" id="name" required />
+      <label for="name">Your Name</label>
+    </div>
+    <div class="form-group">
+      <input type="email" name="email" id="email" required />
+      <label for="email">Your Email</label>
+    </div>
+    <div class="form-group">
+      <textarea name="message" id="message" required></textarea>
+      <label for="message">Your Message</label>
+    </div>
+    <button type="submit"><i class="fa-solid fa-paper-plane"></i> Send</button>
+    <div class="contact-info">
+      <p><i class="fa-solid fa-envelope"></i> vishal.deshmukh[at]umbc.edu</p>
+      <p><i class="fa-solid fa-location-dot"></i> Based in Baltimore, MD</p>
+    </div>
+  </form>
+
+  <!-- Futuristic Animated Background (Particles) -->
+  <canvas id="particles-bg"></canvas>
+  <!-- Custom Cursor -->
+  <div class="futuristic-cursor" id="futuristicCursor"></div>
+
+  <footer>
+    <p>Connect: <a href="https://www.linkedin.com/in/vishal-deshmukh-813189210/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> | <a href="https://github.com/vishaldeshmukh" target="_blank"><i class="fab fa-github"></i> GitHub</a> | <a href="https://www.behance.net/vishaldeshmukh" target="_blank"><i class="fab fa-behance"></i> Behance</a></p>
+    <p>&copy; 2025 Vishal Deshmukh. All rights reserved.</p>
+  </footer>
+  <script src="futuristic-effects.js"></script>
+</body>
+</html>

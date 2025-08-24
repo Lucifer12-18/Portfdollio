@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Placeholder Images</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .placeholder { 
+            width: 400px; 
+            height: 300px; 
+            background: linear-gradient(45deg, #3a86ff, #8338ec);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            border-radius: 8px;
+            font-size: 18px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        .container { display: flex; flex-wrap: wrap; }
+    </style>
+</head>
+<body>
+    <h1>Portfolio Case Study Placeholder Images</h1>
+    <p>Right-click each image and "Save image as..." to save them as PNG files in the assets folder.</p>
+    
+    <h2>Reddit Case Study Images</h2>
+    
+    <div class="container">
+        <canvas id="hero" class="placeholder">Reddit Hero Screens</canvas>
+        <canvas id="research1" class="placeholder">Research Findings</canvas>
+        <canvas id="research2" class="placeholder">User Interviews</canvas>
+        <canvas id="research3" class="placeholder">Competitive Analysis</canvas>
+        <canvas id="research4" class="placeholder">Persona Development</canvas>
+        <canvas id="lowfi1" class="placeholder">Low-Fi Onboarding</canvas>
+        <canvas id="lowfi2" class="placeholder">Low-Fi Post Creation</canvas>
+        <canvas id="lowfi3" class="placeholder">Low-Fi Mobile Prompt</canvas>
+        <canvas id="midfi1" class="placeholder">Mid-Fi Onboarding</canvas>
+        <canvas id="midfi2" class="placeholder">Mid-Fi Post Creation</canvas>
+        <canvas id="midfi3" class="placeholder">Mid-Fi Mobile Prompt</canvas>
+        <canvas id="walkthrough" class="placeholder">Walkthrough Results</canvas>
+        <canvas id="final-onboarding" class="placeholder">Final Onboarding</canvas>
+        <canvas id="before-post" class="placeholder">Before Post Creation</canvas>
+        <canvas id="after-post" class="placeholder">After Post Creation</canvas>
+        <canvas id="final-prompt" class="placeholder">Final Mobile Prompt</canvas>
+    </div>
+    
+    <h2>Zara Case Study Images</h2>
+    <div class="container">
+        <canvas id="zara-hero" class="placeholder">Zara Hero Screens</canvas>
+        <canvas id="zara-lowfi1" class="placeholder">Zara Low-Fi Navigation</canvas>
+        <canvas id="zara-lowfi2" class="placeholder">Zara Low-Fi Product Cards</canvas>
+        <canvas id="zara-lowfi3" class="placeholder">Zara Low-Fi Filters</canvas>
+        <canvas id="zara-midfi1" class="placeholder">Zara Mid-Fi Navigation</canvas>
+        <canvas id="zara-midfi2" class="placeholder">Zara Mid-Fi Product Cards</canvas>
+        <canvas id="zara-midfi3" class="placeholder">Zara Mid-Fi Filters</canvas>
+        <canvas id="zara-before-home" class="placeholder">Zara Before Home</canvas>
+        <canvas id="zara-after-home" class="placeholder">Zara After Home</canvas>
+        <canvas id="zara-before-card" class="placeholder">Zara Before Card</canvas>
+        <canvas id="zara-after-card" class="placeholder">Zara After Card</canvas>
+        <canvas id="zara-before-feedback" class="placeholder">Zara Before Feedback</canvas>
+        <canvas id="zara-after-feedback" class="placeholder">Zara After Feedback</canvas>
+        <canvas id="zara-before-filter" class="placeholder">Zara Before Filter</canvas>
+        <canvas id="zara-after-filter" class="placeholder">Zara After Filter</canvas>
+    </div>
+
+    <script>
+        const canvases = document.querySelectorAll('canvas');
+        canvases.forEach(canvas => {
+            const ctx = canvas.getContext('2d');
+            const text = canvas.textContent;
+            
+            // Set canvas size
+            canvas.width = 400;
+            canvas.height = 300;
+            
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, 400, 300);
+            gradient.addColorStop(0, '#3a86ff');
+            gradient.addColorStop(1, '#8338ec');
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 400, 300);
+            
+            // Add text
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 18px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            const lines = text.split(' ');
+            const lineHeight = 25;
+            const startY = 150 - (lines.length * lineHeight) / 2;
+            
+            lines.forEach((line, index) => {
+                ctx.fillText(line, 200, startY + index * lineHeight);
+            });
+            
+            // Add subtle pattern
+            ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+            ctx.lineWidth = 1;
+            for (let i = 0; i < 400; i += 20) {
+                ctx.beginPath();
+                ctx.moveTo(i, 0);
+                ctx.lineTo(i, 300);
+                ctx.stroke();
+            }
+        });
+    </script>
+</body>
+</html>
